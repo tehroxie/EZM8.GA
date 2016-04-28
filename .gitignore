@@ -27,3 +27,5 @@ $RECYCLE.BIN/
 
 ### Prepros ###
 prepros.cfg
+*.sass
+assets/css/sass/2-modules/_login.sass
