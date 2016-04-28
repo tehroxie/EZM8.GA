@@ -1,6 +1,9 @@
 body
   background: $background
 
+.loaded
+  transition: all 0.3s ease-in-out
+
 .page-wrapper
   background: $background
 
@@ -11,7 +14,6 @@ body
     display: block
     position: fixed
     height: 100%
-    transition: all 0.3s ease-in-out
     @media screen and (max-width: 450px)
       background: rgba(43, 144, 217, 0)
 
@@ -27,7 +29,6 @@ body
     margin-left: 25%
     padding-top: 10%
     display: block
-    transition: all 0.3s ease-in-out
     @media screen and (min-width: 1280px)
       margin-left: 320px
     @media screen and (max-width: 450px)
