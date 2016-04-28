@@ -1,3 +1,6 @@
+body
+  background: $background
+
 .page-wrapper
   background: $background
 
@@ -8,20 +11,33 @@
     display: block
     position: fixed
     height: 100%
+    transition: all 0.3s ease-in-out
+    @media screen and (max-width: 450px)
+      background: rgba(43, 144, 217, 0)
 
     #logo
-      max-width: 150px
+      max-width: 65%
       margin: 200px auto
       display: block
+      @media screen and (max-width: 450px)
+        opacity: 0
 
   .main-content
     position: relative
     margin-left: 25%
+    padding-top: 10%
     display: block
+    transition: all 0.3s ease-in-out
     @media screen and (min-width: 1280px)
       margin-left: 320px
+    @media screen and (max-width: 450px)
+      margin: 0
 
     .content-wrapper
+      display: block
+      margin: 0 auto
+      max-width: 350px
+      text-align: center
 
       .logo
         p
@@ -40,18 +56,26 @@
           .submit-button
             background: none
             border: none
-            color: $main
+            color: lighten($main, 15%)
             font-size: 22px
             letter-spacing: 0.25em
+            transition: all 0.2s ease-in-out
+            &:hover
+              color: $main
+
 
     .not-registered
+      margin: 25px 0
       p
         color: $text
         font-size: 12px
         font-weight: 300
         letter-spacing: 0.25em
 
-        span
-          color: $text
-          font-weight: 600
+        a
+          color: lighten($text, 20%)
+          font-weight: 700
           margin-left: 12px
+          transition: all 0.2s ease-in-out
+          &:hover
+            color: $text
