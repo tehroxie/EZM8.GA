@@ -1,0 +1,57 @@
+.page-wrapper
+  background: $background
+
+  .sidebar
+    width: 25%
+    max-width: 320px
+    background: $main
+    display: block
+    position: fixed
+    height: 100%
+
+    #logo
+      max-width: 150px
+      margin: 200px auto
+      display: block
+
+  .main-content
+    position: relative
+    margin-left: 25%
+    display: block
+    @media screen and (min-width: 1280px)
+      margin-left: 320px
+
+    .content-wrapper
+
+      .logo
+        p
+          font-size: 45px
+          font-weight: 600
+          color: $main
+          letter-spacing: 0.5em
+      .signin-form
+        .input-group
+          .text-input
+            background: $white
+            color: $light
+            font-weight: 300
+            border: solid $light 1px
+        .submit
+          .submit-button
+            background: none
+            border: none
+            color: $main
+            font-size: 22px
+            letter-spacing: 0.25em
+
+    .not-registered
+      p
+        color: $text
+        font-size: 12px
+        font-weight: 300
+        letter-spacing: 0.25em
+
+        span
+          color: $text
+          font-weight: 600
+          margin-left: 12px
