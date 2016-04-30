@@ -47,12 +47,18 @@ body
           color: $main
           letter-spacing: 0.5em
       .signin-form
-        .input-group
-          .text-input
-            background: $white
-            color: $light
-            font-weight: 300
-            border: solid $light 1px
+        .show-toggle
+          font-size: 15px
+          vertical-align: middle
+          padding: 0 2%
+          display: none
+          cursor: pointer
+          color: rgba(40, 44, 55, 0.85)
+          transition: all 0.2s ease-in-out
+          pointer-events: all
+          &:hover
+            color: rgba(40, 44, 55, 1)
+
         .submit
           .submit-button
             background: none

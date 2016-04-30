@@ -33,10 +33,10 @@
               </label>
             </span>
 
-            <span class="input">
+            <span class="input input-password">
               <input class="input-field" type="password" id="password-signin" />
               <label class="input-label" for="password-signin">
-                <span class="input-label-content">Password</span>
+                <span class="input-label-content">Password<i class="fa fa-eye show-toggle"></i></span>
               </label>
             </span>
 
@@ -85,11 +85,13 @@
 
 				function onInputFocus( ev ) {
 					classie.add( ev.target.parentNode, 'has-value' );
+          toggle();
 				}
 
 				function onInputBlur( ev ) {
 					if( ev.target.value.trim() === '' ) {
 						classie.remove( ev.target.parentNode, 'has-value' );
+            toggle();
 					}
 				}
 			})();
