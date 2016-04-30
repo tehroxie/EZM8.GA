@@ -17,12 +17,6 @@ $(function(){
 
   });
 
-  $('.signin-form .input-password .input-field').blur(function(){
-      if($(this).val() === "" ) {
-        $('.signin-form .input-password').removeClass("has-value");
-      }
-  });
-
 });
 
 function toggle() {
