@@ -1,5 +1,14 @@
-.page-wrapper
+.page-wrapper-profile
   .sidebar
+    width: 25%
+    max-width: 320px
+    background: $main
+    display: block
+    position: fixed
+    height: 100%
+    @media screen and (max-width: 450px)
+      background: rgba(43, 144, 217, 0)
+
     @media screen and (max-width: 450px)
       background: $main
       width: 50px
@@ -135,10 +144,22 @@
           font-size: 3em
 
   .main-content
+    position: relative
+    margin-left: 25%
+    padding-top: 10%
+    display: block
+    @media screen and (min-width: 1280px)
+      margin-left: 320px
+    @media screen and (max-width: 450px)
+      margin: 0
     padding-top: 20px
     @media screen and (max-width: 450px)
       margin-left: 50px
     .content-wrapper
+      display: block
+      margin: 0 auto
+      max-width: 350px
+      text-align: center
       +container(100%)
       .sign-out
         float: left
