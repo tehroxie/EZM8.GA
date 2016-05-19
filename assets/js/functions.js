@@ -2,27 +2,93 @@ $(function(){
 
   $().addClass("loaded");
 
-  $('.signin-form .input-password .show-toggle').click(function(){
+  $('#following').click(function(){
+    if($('.followers').is(":visible")) {
+      $('.followers').toggle();
+      $('.following').toggle();
+    }
 
-    $(this).toggleClass("fa-eye-slash",$(this).hasClass("fa-eye"));
-    $(this).toggleClass("fa-eye",!$(this).hasClass("fa-eye-slash"));
+    else if($('.groups').is(":visible")) {
+      $('.groups').toggle();
+      $('.following').toggle();
+    }
 
-    if($('.signin-form .input-password .show-toggle').hasClass("fa-eye-slash")) {
-      $('.signin-form .input-password .input-field').clone().attr('type','text').insertAfter('.signin-form .input-password .input-field').prev().remove();
-
-    } else {
-      $('.signin-form .input-password .input-field').clone().attr('type','password').insertAfter('.signin-form .input-password .input-field').prev().remove();
-
+    else {
+      $('.following').toggle();
     }
 
   });
 
+  $('#followers').click(function(){
+    if($('.following').is(":visible")) {
+      $('.following').toggle();
+      $('.followers').toggle();
+    }
+
+    else if($('.groups').is(":visible")) {
+      $('.groups').toggle();
+      $('.followers').toggle();
+    }
+
+    else {
+      $('.followers').toggle();
+    }
+  });
+
+  $('#groups').click(function(){
+    if($('.followers').is(":visible")) {
+      $('.followers').toggle();
+      $('.groups').toggle();
+    }
+
+    else if($('.following').is(":visible")) {
+      $('.following').toggle();
+      $('.groups').toggle();
+    }
+
+    else {
+      $('.groups').toggle();
+    }
+  });
+
 });
 
-function toggle() {
-  if($('.input-password').hasClass("has-value")) {
-    $('.signin-form .input-password .show-toggle').show();
-  } else {
-    $('.signin-form .input-password .show-toggle').hide();
-  }
-}
+;( function( $, window, document, undefined )
+{
+	$( '.inputfile' ).each( function()
+	{
+		var $input	 = $( this ),
+			$label	 = $input.next( 'label' ),
+			labelVal = $label.html();
+
+		$input.on( 'change', function( e )
+		{
+			var fileName = '';
+
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else if( e.target.value )
+				fileName = e.target.value.split( '\\' ).pop();
+
+      var extension = fileName.substring(fileName.indexOf('.') + 1);
+
+      if( !(fileName.indexOf("selected") != -1)) {
+        if( fileName.length > 15 ) {
+          fileName = $.trim(fileName).substring(0, 7).trim(this) + "(...)." + extension;
+        }
+      }
+
+
+			if( fileName )
+				$label.find( 'p' ).html( fileName );
+			else
+				$label.html( labelVal );
+		});
+
+		// Firefox bug fix
+		$input
+		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+
+	});
+})( jQuery, window, document );
